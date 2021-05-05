@@ -5,17 +5,18 @@ import Logo from './logo.png'
 
 export default function Register(props) {
     render (
+        //link to login.js in nav /below header
         <form class="row g-3">
             <div class="col-md-4">
-                <label for="validationServer01" class="form-label">First name</label>
-                <input type="text" class="form-control is-valid" id="validationServer01" value="First Name" required>
+                <label for="validationServer01" class="form-label">Name (First + Last)</label>
+                <input type="text" class="form-control is-valid" id="validationServer01" value="First Name + Last Name" required>
                 <div class="valid-feedback">
                     ok cool
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="validationServer02" class="form-label">Last name</label>
-                <input type="text" class="form-control is-valid" id="validationServer02" value="Last Name" required>
+                <label for="validationServer02" class="form-label">Email</label>
+                <input type="text" class="form-control is-valid" id="validationServer02" value="Email" required>
                 <div class="valid-feedback">
                     bet
                 </div>
@@ -66,11 +67,11 @@ export default function Register(props) {
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="validationServerUsername" class="form-label">Password</label>
+            <label for="validationServerUserPassword" class="form-label">Password</label>
                 <div class="input-group has-validation">
-                <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
-                <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                    enter valid password. Must be 8 characters.
+                <input type="text" class="form-control is-invalid" id="validationServerUserPassword" aria-describedby="inputGroupPrepend3 validationServerPasswordFeedback" required>
+                <div id="validationServerUserPasswordFeedback" class="invalid-feedback">
+                    enter valid password. Must be atleast 8 characters.
                 </div>
                 </div>
             </div>
