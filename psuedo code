@@ -1,0 +1,88 @@
+app.js
+    hooks
+    <router>
+        <switch>
+            <nav/>
+        <switch/>
+    <router/>
+
+    register.js
+        links to login.js
+
+    login.js
+        <div> row
+            <div> col
+                <form>
+                    <div>
+                        <img/> ?
+                        <h1><h1/>
+                            <input/>
+                            <label/>
+                    <div>
+                <form/>
+            <div/>
+        <div/>
+
+        useHistory for redirect or seperate component with custom hook
+        links to register.js
+
+
+    nav.js
+        user page
+        home
+        logout
+        account manager.js
+            change password
+            block/unblock
+            delete profile
+        favorites
+        playlists
+        followers
+        following
+    track.js
+         ? single pages for both playlists and tracks
+         ? or seperate playlist.js
+         ? private tracks
+            seperate auth level
+        user track reactions
+        user profile link
+            comments?
+        users are authorized to delete their own tracks but not others
+    playlist.js
+        user playlist reactions
+        user profile link
+        normal playlists  
+        special spatial audio playlists using SDKs
+              users are authorized to delete their own playlists but not others
+    user.js
+        user profile pic
+        user cover pic
+        user's uploaded tracks
+            sort by:
+                most recent
+                most played
+                most liked
+                most hated
+                most confused
+        users favorites / hates / confuses
+        other users reaction stats to this user
+                number of followers
+                    link to follows.js
+                number of users that he/she/they are following
+                    link to following.js
+        (this user)followers.js
+                array of prof pics linking to those users
+        (this user)followers.js
+                array of prof pics linking to those users
+    home.js
+        feed recently uploaded tracks in one big playlists/feed of who the logged in user is following
+bootstrap
+wavesurfer.js
+Google Resonance
+firebase
+
+no reposts?
+    might be better
+might be worth keeping reacts anonymous
+    or pay more, new authorization for seeing list of which users reacted what to what
+        would require seperate .js files for likes, confuses, hates, in relation to: users, tracks, or playlists
