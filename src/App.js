@@ -4,22 +4,24 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Router>
+        <Nav 
+        //token
+        // deleteToken={deleteToken}
+        />
+        <Switch>
+          {/* <Route exact={true} path="a">
+            <Register saveToken={saveToken} />
+            </Route>
+            <Route exact={true} path="a">
+                <Login saveToken={saveToken} />
+            <Route exact={true} path="a"
+              <Dash saveToken={saveToken} />
+            </Route>
+          */}
+        </Switch>
+      </Router>
 
-      // loudfog header at top of all pages
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
