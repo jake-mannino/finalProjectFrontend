@@ -16,7 +16,7 @@ export default function Register(props) {
             </div>
             <div class="col-md-4">
                 <label for="validationServer02" class="form-label">Email</label>
-                <input type="text" class="form-control is-valid" id="validationServer02" value="Email" required>
+                <input name="email" type="email" class="form-control is-valid" id="validationServer02" value="Email" required>
                 <div class="valid-feedback">
                     bet
                 </div>

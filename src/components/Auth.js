@@ -30,7 +30,7 @@ import React from 'react'
 import Logo from './logo.png'
 
 
-export default function Login (props) {
+export default function Auth(props) {
     render (
         //link to register in nav/ below header
         <form class="row g-3">

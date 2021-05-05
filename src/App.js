@@ -1,5 +1,13 @@
-import logo from './logo.svg';
+import React, { useState, useEffect} from 'react';
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+
 import './App.css';
+import Auth from './Auth';
+import Nav from './Nav';
+import Register from "./Register";
+
+import bootstrap from 'bootstrap';
+
 
 function App() {
   return (
@@ -10,9 +18,11 @@ function App() {
         // deleteToken={deleteToken}
         />
         <Switch>
-          <Route>
-            <Auth />
-            
+          <Route path='/register'>
+            <Auth 
+              register
+            />
+
           </Route>
           {/* <Route exact={true} path="a">
             <Register saveToken={saveToken} />
