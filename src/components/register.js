@@ -1,25 +1,9 @@
-//import nav, // link to login.js
-    //anonymous version for unlogged / unregisters users,
-    // just "login" on nav, if clicked links to login page, this nav button switches to sign on login.js
 
-//body
-    //container
-            //div
-                //row
-                    //col
-                        //card
-                            //subheader or h1
-                                // input fields with :valid classes if valid, linked to serve for validation
-                                    //email
-                                    //password
+import React from 'react'
+import Logo from './logo.png'
 
 
-//export
-
-//https://getbootstrap.com/docs/5.0/forms/validation/
-//
-//
-function Register() {
+export default function Register(props) {
     render (
         <form class="row g-3">
             <div class="col-md-4">
@@ -107,4 +91,25 @@ function Register() {
     );
 }
 
-export default Register;
+
+
+{/* //import nav, // link to login.js
+    //anonymous version for unlogged / unregisters users,
+    // just "login" on nav, if clicked links to login page, this nav button switches to sign on login.js
+
+//body
+    //container
+            //div
+                //row
+                    //col
+                        //card
+                            //subheader or h1
+                                // input fields with :valid classes if valid, linked to serve for validation
+                                    //email
+                                    //password
+
+
+//export
+
+//https://getbootstrap.com/docs/5.0/forms/validation/
+// */}
