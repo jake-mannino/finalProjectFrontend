@@ -8,6 +8,8 @@ app.js
 
     register.js
         links to login.js
+    
+    ? redirect.js ?
 
     login.js
         <div> row
