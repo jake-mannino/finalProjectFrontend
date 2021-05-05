@@ -12,7 +12,7 @@
                             //subheader or h1
                                 //two input fields with :valid classes if valid
                                     //email
-                                    //password
+                                        //password
         // <div> row
         //     <div> col
         //         <form>

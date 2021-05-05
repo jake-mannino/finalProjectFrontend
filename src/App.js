@@ -10,6 +10,10 @@ function App() {
         // deleteToken={deleteToken}
         />
         <Switch>
+          <Route>
+            <Auth />
+            
+          </Route>
           {/* <Route exact={true} path="a">
             <Register saveToken={saveToken} />
             </Route>
