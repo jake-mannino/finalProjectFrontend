@@ -1,4 +1,6 @@
-//nav is at top of all pages, imported into all other components 
+
+//
+//nav is at top of all pages below header (in app.js), imported into all other components 
         //except login for unregistered users
 
 //nav menus links too
@@ -15,12 +17,14 @@
             //following
             //followers
 
-    //logout
-        //logout pops up  as a modal "are you sure?", 
-        //not a new page or speerate .js component
-    //audio tornado, 
-        //also
-  
+
+    //perhap new subnav expands on hover to reveal these buttons /link below
+        //logout
+            //logout pops up  as a modal "are you sure?", 
+            //not a new page or speerate .js component
+        //audio tornado switch
+            //also not a new page
+    
 //don't show the nav menu link / button to the current page being displayed below nav,
     // so if on home, don't show home in nav menu, 
             // except logout, which is not a new page but modal redirecting to unregistered login
