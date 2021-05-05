@@ -16,6 +16,7 @@
                 //confuses
             //following
             //followers
+    //input field for search, search.js rendered for search results
 
 
     //perhap new subnav expands on hover to reveal these buttons /link below

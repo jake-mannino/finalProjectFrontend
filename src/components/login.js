@@ -26,3 +26,9 @@
         //     <div/>
         // <div/>
         //link to register.js
+
+        function login {
+                render (
+
+                )
+        }
