@@ -1,10 +1,11 @@
 import React, { useState, useEffect} from 'react';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
+import Register from 
 import './App.css';
 import Auth from './Auth';
 import Nav from './Nav';
-import Register from "./Register";
+import Register from './Register';
 
 import bootstrap from 'bootstrap';
 
@@ -18,7 +19,7 @@ function App() {
         // deleteToken={deleteToken}
         />
         <Switch>
-          <Route path='/register'>
+          <Route path='/Register'>
             <Auth 
               register
             />
