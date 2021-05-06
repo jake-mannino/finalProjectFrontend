@@ -1,6 +1,6 @@
 
 //
-//nav is at top of all pages below header (in app.js), imported into all other components 
+//nav is at top of all pages below header (in app.js), imported into app.js
         //except login for unregistered users
 
 //nav menus links too
