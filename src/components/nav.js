@@ -45,7 +45,7 @@ export default function Nav(props) {
             <div classname="container-fluid mx-4">
                 <a classname="navbar-brand text left">LÖÜD FÖG</a>
                     <span className="d-flex">
-                        <Link to="/register" className="mx-3 btn-outline-danger"Sign Up</Link>
+                        <Link to="/register" className="mx-3 btn-outline-danger">Sign Up</Link>
                         {/* link to login                       */}
                     </span>
             </div>
