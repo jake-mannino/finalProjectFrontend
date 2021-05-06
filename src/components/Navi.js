@@ -7,7 +7,7 @@ export default function Navi(props) {
             <div classname="container-fluid mx-4">
                 <a classname="navbar-brand text left">LÖÜD FÖG: Väpör wïth  dBs</a>
                     <span className="d-flex">
-                        <Link to="/register" className="mx-3 btn-outline-danger">Sign Up</Link>
+                        <Link to="/auth" className="mx-3 btn-outline-danger">Login</Link>
                         {/* link to login */}
                     </span>
             </div>

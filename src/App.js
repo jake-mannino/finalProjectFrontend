@@ -28,6 +28,9 @@ function App() {
             <Route exact={true} path="a"
               <Dash saveToken={saveToken} />
             </Route>
+            Redirect react router component, based on auth
+            custom hook
+              useAuth
           */}
         </Switch>
       </Router>
