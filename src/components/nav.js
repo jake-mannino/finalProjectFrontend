@@ -32,9 +32,25 @@
             // except logout, which is not a new page but modal redirecting to unregistered login
             //"audio tornado" is exempt of this, it's a button, on/off switch, not a seperate page, enables animate on hover psuedo-class in bootstrap on all the other pages.
 
-// maybe side nav with transparencies ?*/}
+// maybe side nav with transparencies ?
+make nav auto load for unauthenticated users, perhap links to see public home feed of top users /uploads, unable to react or follow until authenticated
+*/}
 
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'react'
+
+export default function Nav(props) {
+    return ( 
+        <nav classname="navbar navbar-dark bg dark">
+            <div classname="container-fluid mx-4">
+                <a classname="navbar-brand text left">LÖÜD FÖG</a>
+                    <span className="d-flex">
+                        <Link to="/register" className="mx-3 btn-outline-danger"Sign Up</Link>
+                        {/* link to login                       */}
+                    </span>
+            </div>
+        </nav>
+    )
+}
 
