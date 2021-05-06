@@ -1,121 +1,108 @@
 
-import React from 'react';
+import React { useState } from 'react';
 // import Auth from 'Auth.js';
 //will add css below near bottom to it's own  css sheet or within a tag
 
 export default function Register(props) {
+    const [formData, setFormData] = useState({})
 
-    render (
-        
-        //link to login.js in nav /below header
+    const handleChange = (e) => {
+        setFormData(previousState=> ( 
+            {
+                ...previousState, 
+                [e.target.name] : e.target.value
+            }
+        ))
+    }
+ console.log(formData)
+
+    return (
+        //link to login.js in nav /below heade
+<div>
+    <main>
         <div>
-<main>
-    <div>
-        <form class="row g-3" onSubmit={this.handleSubmit}>
-            <div class="col-md-4">
-                <label for="validationServer01" class="form-label">Name (First + Last)</label>
-                <input type="text" class="form-control is-valid" id="validationServer01" value="First Name + Last Name" required>
-                <div class="valid-feedback">
-                    ok cool
+            <form class="row g-3" onSubmit={this.handleSubmit}>
+                <div class="col-md-4">
+                    <label for="validationServer01" class="form-label">Name (First + Last)</label>
+                    <input type="text" class="form-control is-valid" id="validationServer01" placeholder="firstname lastname" value={formData.name || ''} onChange={handleChange} required/>
+                    <div class="valid-feedback">
+                        ok cool
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <label for="validationServer02" class="form-label">Email</label>
-                <input name="email" type="email" class="form-control is-valid" id="validationServer02" value="Email" required>
-                <div class="valid-feedback">
-                    bet
+                <div class="col-md-4">
+                    <label for="validationServer02" class="form-label">Email</label>
+                    <input name="email" type="email" class="form-control is-valid" id="validationServer02" value={formData.email || ''} required/>
+                    <div class="valid-feedback">
+                        bet
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <label for="validationServerUsername" class="form-label">Username</label>
-                <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
-                <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                    choose a username
+                <div class="col-md-4">
+                    <label for="validationServerUsername" class="form-label">Username</label>
+                    <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                    <input type="text" class="form-control is-invalid" id="validationServerUsername" value={formData.username || ''} aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required/>
+                    <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                        choose a username
+                    </div>
+                    </div>
                 </div>
+                <div class="col-12">
+                    <div class="form-check">
+                    <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required/>
+                    <label class="form-check-label" for="invalidCheck3">
+                        Agree to terms and conditions
+                    </label>
+                    <div id="invalidCheck3Feedback" class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label for="validationServer03" class="form-label">City</label>
-                <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
-                <div id="validationServer03Feedback" class="invalid-feedback">
-                    Please provide a valid city.
+                <div class="col-md-4">
+                <label for="validationServerUserPassword" class="form-label">Password</label>
+                    <div class="input-group has-validation">
+                    <input type="text" class="form-control is-invalid" id="validationServerUserPassword" placeholder="password" aria-describedby="inputGroupPrepend3 validationServerPasswordFeedback" value={formData.name || ''} required/>
+                    <div id="validationServerUserPasswordFeedback" class="invalid-feedback">
+                        enter valid password. Must be atleast 8 characters.
+                    </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <label for="validationServer04" class="form-label">State</label>
-                <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
-                <option selected disabled value="">Choose...</option>
-                <option>...</option>
+                <div class="mb-3">
+                    <span>Upload Profile Picture</span>
+                    <input type="file" class="form-control" aria-label="file example" value={formData.profPic|| ''} required/>
+                    <div class="invalid-feedback">Example invalid form file feedback</div>
+                </div>
+                <div class="mb-3">
+                    <span>Upload Cover Photo</span>
+                    <input type="file" class="form-control" aria-label="file example" value={formData.coverPic|| ''} required/>
+                    <div class="invalid-feedback">Example invalid form file feedback</div>
+                </div>
+                <label>
+            Pick your clan:
+                <select>
+                    <option value="DR">DrPhilInc</option>
+                    <option value="Sensi">KneelTheGrassTysonsLLC</option>
+                    <option value="Sir">ShrekSquad</option>
+                    <option value="Yeezy">FakeYeezyGang</option>
+                    <option value="Proffesor">ProffessorPBHoleNinjaMafiaRepostCartel</option>
+                    <option value="Big">EastSeasmeStElmoHittas</option>
+                    <option value="lord">LordFarsquaad</option>
+                    <option value="Bhad">BhadBarbies</option>
+                    <option value="OG">ChurchOfDannyDevito</option>
+                    <option value="lilhomie">RichHomieQuans</option>
+                    <option value="thicc">ThiccMrKrabs</option>
+                    <option value="BrocclisMaior">BroccoliPosse</option>
+                    <option value="OGTater">PotatoHeads</option>
+                    <option value="O_______O">IceAgeSidDynasty</option>
+                    <option value="{">LebronHairline</option>
+                    <option value="Sampler">AllTheCosctoSamples</option>
+                    <option value="TearsAreFuel">RoombasCodedwithHumanEmotionsAndDesires</option>
                 </select>
-                <div id="validationServer04Feedback" class="invalid-feedback">
-                    Please select a valid state.
+            </label>
+                <input type="submit" value="Submit"/>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit form</button>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <label for="validationServer05" class="form-label">Zip</label>
-                <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
-                <div id="validationServer05Feedback" class="invalid-feedback">
-                    Please provide a valid zip.
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="form-check">
-                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
-                <label class="form-check-label" for="invalidCheck3">
-                    Agree to terms and conditions
-                </label>
-                <div id="invalidCheck3Feedback" class="invalid-feedback">
-                    You must agree before submitting.
-                </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-            <label for="validationServerUserPassword" class="form-label">Password</label>
-                <div class="input-group has-validation">
-                <input type="text" class="form-control is-invalid" id="validationServerUserPassword" aria-describedby="inputGroupPrepend3 validationServerPasswordFeedback" required>
-                <div id="validationServerUserPasswordFeedback" class="invalid-feedback">
-                    enter valid password. Must be atleast 8 characters.
-                </div>
-                </div>
-            </div>
-            <div class="mb-3">
-                <span>Upload Profile Picture</span>
-                <input type="file" class="form-control" aria-label="file example" required>
-                <div class="invalid-feedback">Example invalid form file feedback</div>
-            </div>
-            <div class="mb-3">
-                <span>Upload Cover Photo</span>
-                <input type="file" class="form-control" aria-label="file example" required>
-                <div class="invalid-feedback">Example invalid form file feedback</div>
-            </div>
-            <label>
-          Pick your clan:
-                <option value="DR">DrPhilInc</option>
-                <option value="Sensi">KneelTheGrassTysonLLC</option>
-                <option value="Sir">ShrekSquad</option>
-                <option value="Yeezy">FakeYeezyGang</option>
-                <option value="Proffesor">ProffessorPBHoleNinjaMafiaRepostCartel</option>
-                <option value="Big">EastSeasmeStElmoHittas</option>
-                <option value="lord">LordFarsquaad</option>
-                <option value="Bhad">BhadBarbies</option>
-                <option value="OG">ChurchOfDannyDevito</option>
-                <option value="lilhomie">RichHomieQuans</option>
-                <option value="thicc">ThiccMrKrabs</option>
-                <option value="BrocclisMaior">BroccoliPosse</option>
-                <option value="OGTater">PotatoHeads</option>
-                <option value="O_______O">IceAgeSidDynasty</option>
-                <option value="{CrookedCurlybraks}">LebronHairline</option>
-                <option value="Sampler">AllTheCosctoSamples</option>
-                <option value="TearsAreFuel">RoombasCodedwithHumanEmotionsAndDesires</option>
-            </select>
-        </label>
-        <input type="submit" value="Submit"/>
-            <div class="col-12">
-                <button class="btn btn-primary" type="submit">Submit form</button>
-            </div>
-        </form>
+            </form>
         </div>
     </main>
 </div>
