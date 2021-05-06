@@ -1,9 +1,10 @@
 import React, { useState, useEffect} from 'react';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
-import './App.css';
-import Navi from './components/Navi';
-import bootstrap from 'bootstrap';
+import './App.css'
+import Navi from './components/Navi'
+import Register from './components/Register'
+import Auth from './components/Auth'
 
 
 function App() {
@@ -16,9 +17,7 @@ function App() {
         />
         <Switch>
           <Route path='/register'>
-            <Register 
-              register
-            />
+            <Register/>
 
           </Route>
           {/* <Route exact={true} path="a">

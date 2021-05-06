@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import Register from './Register'
 
 export default function Navi(props) {
     return ( 
@@ -9,7 +8,7 @@ export default function Navi(props) {
                 <a classname="navbar-brand text left">LÖÜD FÖG: Väpör wïth  dBs</a>
                     <span className="d-flex">
                         <Link to="/register" className="mx-3 btn-outline-danger">Sign Up</Link>
-                        {/* link to login                       */}
+                        {/* link to login */}
                     </span>
             </div>
         </nav>

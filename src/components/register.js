@@ -1,7 +1,6 @@
 
 import React { useState } from 'react';
 // import Auth from 'Auth.js';
-//will add css below near bottom to it's own  css sheet or within a tag
 import axios from 'axios'
 export default function Register(props) {
     const [formData, setFormData] = useState({})
@@ -20,12 +19,16 @@ export default function Register(props) {
         axios.post(apiUrl, formData
         .then(response =>{
             console.log(response)
+            //save token
+            //useHistory push to Dashboard
         })
         .catch(error=>{
             console.log(error)
         })
     } 
  console.log(formData)
+ //setup form validation
+ //setup error handling from API
 
     return (
         //link to login.js in nav /below heade
