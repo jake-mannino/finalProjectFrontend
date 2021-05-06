@@ -11,7 +11,7 @@ export default function Register(props) {
         <div>
 <main>
     <div>
-        <form class="row g-3">
+        <form class="row g-3" onSubmit={this.handleSubmit}>
             <div class="col-md-4">
                 <label for="validationServer01" class="form-label">Name (First + Last)</label>
                 <input type="text" class="form-control is-valid" id="validationServer01" value="First Name + Last Name" required>
@@ -90,6 +90,28 @@ export default function Register(props) {
                 <input type="file" class="form-control" aria-label="file example" required>
                 <div class="invalid-feedback">Example invalid form file feedback</div>
             </div>
+            <label>
+          Pick your clan:
+                <option value="DR">DrPhilInc</option>
+                <option value="Sensi">KneelTheGrassTysonLLC</option>
+                <option value="Sir">ShrekSquad</option>
+                <option value="Yeezy">FakeYeezyGang</option>
+                <option value="Proffesor">ProffessorPBHoleNinjaMafiaRepostCartel</option>
+                <option value="Big">EastSeasmeStElmoHittas</option>
+                <option value="lord">LordFarsquaad</option>
+                <option value="Bhad">BhadBarbies</option>
+                <option value="OG">ChurchOfDannyDevito</option>
+                <option value="lilhomie">RichHomieQuans</option>
+                <option value="thicc">ThiccMrKrabs</option>
+                <option value="BrocclisMaior">BroccoliPosse</option>
+                <option value="OGTater">PotatoHeads</option>
+                <option value="O_______O">IceAgeSidDynasty</option>
+                <option value="{CrookedCurlybraks}">LebronHairline</option>
+                <option value="Sampler">AllTheCosctoSamples</option>
+                <option value="TearsAreFuel">RoombasCodedwithHumanEmotionsAndDesires</option>
+            </select>
+        </label>
+        <input type="submit" value="Submit"/>
             <div class="col-12">
                 <button class="btn btn-primary" type="submit">Submit form</button>
             </div>
@@ -122,7 +144,26 @@ $form-feedback-icon-invalid:        url("data:image/svg+xml,<svg xmlns='http://w
 {/* //import nav, // link to login.js
     //anonymous version for unlogged / unregisters users,
     // just "login" on nav, if clicked links to login page, this nav button switches to sign on login.js
-
+// pick clan <select>
+                <option value="DR">DrPhilInc</option>
+                <option value="Sensi">KneelTheGrassTysonLLC</option>
+                <option value="Sir">ShrekSquad</option>
+                <option value="Yeezy">FakeYeezyGang</option>
+                <option value="Proffesor">ProffessorPBHoleNinjaMafiaRepostCartel</option>
+                <option value="Big">EastSeasmeStElmoHittas</option>
+                <option value="lord">LordFarsquaad</option>
+                <option value="Bhad">BhadBarbies</option>
+                <option value="OG">ChurchOfDannyDevito</option>
+                <option value="lilhomie">RichHomieQuans</option>
+                <option value="thicc">ThiccMrKrabs</option>
+                <option value="BrocclisMaior">BroccoliPosse</option>
+                <option value="OGTater">PotatoHeads</option>
+                <option value="O_______O"> IceAgeSidDynasty</option>
+                <option value="{CrookedCurlybraks}">LebronHairline</option>
+                <option value="Sampler">AllTheCosctoSamples</option>
+                <option value="TearsAreFuel">RoombasCodedwithHumanEmotionsAndDesires</option>
+            </select>
+            value of selected option is used as a prefix title to your username indicating your clan
 //body
     //container
             //div
