@@ -1,6 +1,5 @@
 
 import React from 'react';
-import Register from 'Register.js';
 // import Auth from 'Auth.js';
 //will add css below near bottom to it's own  css sheet or within a tag
 
