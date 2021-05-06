@@ -1,5 +1,4 @@
-
-import React { useState } from 'react';
+import React, { useState } from 'react';
 // import Auth from 'Auth.js';
 import axios from 'axios'
 export default function Register(props) {
