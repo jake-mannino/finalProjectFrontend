@@ -1,12 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
-import Register from './Register';
 import './App.css';
-import Auth from './Auth';
 import Nav from './Nav';
-
-
 import bootstrap from 'bootstrap';
 
 

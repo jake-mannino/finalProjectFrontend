@@ -1,6 +1,6 @@
 
-//
-//nav is at top of all pages below header (in app.js), imported into app.js
+
+{/*//nav is at top of all pages below header (in app.js), imported into app.js
         //except login for unregistered users
 
 //nav menus links too
@@ -32,5 +32,9 @@
             // except logout, which is not a new page but modal redirecting to unregistered login
             //"audio tornado" is exempt of this, it's a button, on/off switch, not a seperate page, enables animate on hover psuedo-class in bootstrap on all the other pages.
 
-// maybe side nav with transparencies ?
+// maybe side nav with transparencies ?*/}
+
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom'
+import axios from 'react'
 

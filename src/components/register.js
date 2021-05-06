@@ -1,9 +1,7 @@
 
 import React from 'react';
-// import Logo from './logo.png';
-
-import Nav from './Nav.js';
-
+import Register from 'Register.js';
+// import Auth from 'Auth.js';
 //will add css below near bottom to it's own  css sheet or within a tag
 
 export default function Register(props) {
@@ -141,4 +139,6 @@ $form-feedback-icon-invalid:        url("data:image/svg+xml,<svg xmlns='http://w
 //export
 
 //https://getbootstrap.com/docs/5.0/forms/validation/
-// */}
+//
+// import Logo from './logo.png';
+ */}
