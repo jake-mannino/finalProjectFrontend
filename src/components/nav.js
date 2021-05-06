@@ -36,9 +36,8 @@
 make nav auto load for unauthenticated users, perhap links to see public home feed of top users /uploads, unable to react or follow until authenticated
 */}
 
-import React from 'react';
+import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import axios from 'react'
 
 export default function Nav(props) {
     return ( 
