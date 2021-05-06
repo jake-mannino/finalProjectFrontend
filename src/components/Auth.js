@@ -27,7 +27,7 @@
         // <div/>
         //link to register.js
 import React from 'react'
-import Logo from './logo.png'
+// import Logo from './logo.png'
 
 
 export default function Auth(props) {

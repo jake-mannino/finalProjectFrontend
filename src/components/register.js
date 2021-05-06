@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Logo from './logo.png';
+// import Logo from './logo.png';
 
 import Nav from './Nav.js';
 
