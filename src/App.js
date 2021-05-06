@@ -16,7 +16,7 @@ function App() {
         />
         <Switch>
           <Route path='/register'>
-            <Auth 
+            <Register 
               register
             />
 
