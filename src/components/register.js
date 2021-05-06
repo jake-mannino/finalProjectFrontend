@@ -2,7 +2,7 @@
 import React { useState } from 'react';
 // import Auth from 'Auth.js';
 //will add css below near bottom to it's own  css sheet or within a tag
-
+import axios from 'axios'
 export default function Register(props) {
     const [formData, setFormData] = useState({})
 
@@ -14,6 +14,17 @@ export default function Register(props) {
             }
         ))
     }
+    const handleSub post(e) => {
+        e.preventDefault();
+        const apiUrl = 'https://loudfog-yomannino549969.codeanyapp.com/api/register'
+        axios.post(apiUrl, formData
+        .then(response =>{
+            console.log(response)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    } 
  console.log(formData)
 
     return (
