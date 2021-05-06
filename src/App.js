@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
 import './App.css';
-import Nav from './Nav';
+import Navi from './Navi';
 import bootstrap from 'bootstrap';
 
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Nav 
+        <Navi 
         //token
         // deleteToken={deleteToken}
         />
