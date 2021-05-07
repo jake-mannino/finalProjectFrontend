@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import Logo from './logo.png'
 import axios from "axios";
+import '../App.scss'
 
 export default function Auth(props) {
   const [formData, setFormData] = useState({});
@@ -44,7 +45,7 @@ export default function Auth(props) {
   //set
   return (
     //link to register in nav/ below header
-    <div>
+    <div className="tornado">
       <main>
         <form class="row g-3" onSubmit={handleSub}>
           <div class="col d-block justify-self-center align-items-center text-center">

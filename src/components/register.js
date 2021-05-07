@@ -39,7 +39,7 @@ export default function Register(props) {
 
   return (
     //link to login.js in nav /below heade
-    <div>
+    <div className="polaroidPicture">
       <main>
         <div>
           <form className="row g-3" onSubmit={handleSub}>
@@ -103,8 +103,7 @@ export default function Register(props) {
                 <span
                   className="input-group-text font-weight-bolder"
                   id="inputGroupPrepend3"
-                >
-                  @
+                  >
                 </span>
                 <input
                   name="username"
