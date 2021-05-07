@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import Auth from 'Auth.js';
-import axios from 'axios';
+import axios from "axios";
+
 export default function Register(props) {
   const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
     setFormData((previousState) => {
-        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+      const value =
+        e.target.type === "checkbox" ? e.target.checked : e.target.value;
       return {
         ...previousState,
         [e.target.name]: value,
@@ -40,140 +42,193 @@ export default function Register(props) {
     <div>
       <main>
         <div>
-          <form class="row g-3" onSubmit={handleSub}>
-            <div class="col-md-4">
-              <label for="validationServer01" class="form-label">
-                Name (First + Last)
+          <form className="row g-3" onSubmit={handleSub}>
+            <div className="col-md-4 justify-self-center text-center align-items-center">
+              <label
+                for="validationServer01"
+                className="form-label font-weight-bolder justify-self-center text-center align-items-center"
+              >
+                <div className="justify-self-center text-center align-items-center">
+                  <h3 className="text-light font-weight-bolder justify-self-center text-center align-items-center">
+                    Name (First + Last)
+                  </h3>
+                </div>
               </label>
               <input
                 name="name"
                 type="text"
-                class="form-control is-valid"
+                className="form-control is-valid"
                 id="validationServer01"
                 placeholder="firstname lastname"
                 value={formData.name || ""}
                 onChange={handleChange}
                 required
               />
-              <div class="valid-feedback">ok cool</div>
+              <div className="valid-feedback text-light bg-dark text-center">
+                ok cool
+              </div>
             </div>
-            <div class="col-md-4">
-              <label for="validationServer02" class="form-label">
-                Email
+            <div className="col-md-4 text-info font-weight-bolder justify-self-center text-center align-items-center">
+              <label
+                for="validationServer02"
+                className="form-label font-weight-bolder"
+              >
+                <h3 className="text-light font-weight-bolder justify-self-center text-center align-items-center">
+                  Email
+                </h3>
               </label>
               <input
                 name="email"
                 type="email"
-                class="form-control is-valid"
+                className="form-control is-valid text-info font-weight-bolder justify-self-center text-center align-items-center"
                 id="validationServer02"
                 value={formData.email || ""}
+                onChange={handleChange}
                 required
               />
-              <div class="valid-feedback">bet</div>
+              <div className="valid-feedback font-weight-bolder text-light bg-dark text-center">
+                bet
+              </div>
             </div>
-            <div class="col-md-4">
-              <label for="validationServerUsername" class="form-label">
-                Username
+            <div className="col-md-4 text-light font-weight-bolder justify-self-center text-center align-items-center">
+              <label
+                for="validationServerUsername"
+                className="form-label font-weight-bolder justify-self-center text-center align-items-center"
+              >
+                <h3 className="text-light font-weight-bolder justify-self-center text-center align-items-center">
+                  Username
+                </h3>
               </label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend3">
+              <div className="input-group has-validation">
+                <span
+                  className="input-group-text font-weight-bolder"
+                  id="inputGroupPrepend3"
+                >
                   @
                 </span>
                 <input
                   name="username"
                   type="text"
-                  class="form-control is-invalid"
+                  className="form-control is-invalid justify-self-center align-items-center text-center"
                   id="validationServerUsername"
                   value={formData.username || ""}
                   aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
+                  onChange={handleChange}
                   required
                 />
                 <div
                   id="validationServerUsernameFeedback"
-                  class="invalid-feedback"
+                  className="invalid-feedback text-light bg-dark text-center"
                 >
                   choose a username
                 </div>
               </div>
             </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input
-                  name="terms"
-                  class="form-check-input is-invalid"
-                  type="checkbox"
-                  value={formData.terms ||""}
-                  id="invalidCheck3"
-                  aria-describedby="invalidCheck3Feedback"
-                  required
-                />
-                <label class="form-check-label" for="invalidCheck3">
-                  Agree to terms and conditions
-                </label>
-                <div id="invalidCheck3Feedback" class="invalid-feedback">
-                  You must agree before submitting.
+            <div className="container justify-self-center text-center align-items-center">
+              <div className="row justify-self-center text-center align-items-center">
+                <div className="col justify-self-center text-center align-items-center">
+                  <div className="form-check justify-self-center text-center align-items-center">
+                    <input
+                      name="terms"
+                      className="card form-check-input is-invalid justify-self-center align-items-center text-center"
+                      type="checkbox"
+                      value={formData.terms || ""}
+                      id="invalidCheck3"
+                      aria-describedby="invalidCheck3Feedback"
+                      onChange={handleChange}
+                      required
+                    />
+                    <label
+                      className="form-check-label font-weight-bolder justify-self-center align-items-center text-center"
+                      for="invalidCheck3"
+                    >
+                      <div>
+                        <h4>Agree to terms and conditions</h4>
+                      </div>
+                    </label>
+                    <div
+                      id="invalidCheck3Feedback"
+                      className="invalid-feedback font-weight-bolder justify-self-center align-items-center text-light text-center"
+                    >
+                      <h5>You must agree before submitting.</h5>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <label for="validationServerUserPassword" class="form-label">
-                Password
+            <div className="col d-block justify-self-center align-items-center text-center">
+              <label
+                for="validationServerUserPassword"
+                className="form-label justify-self-center align-items-center text-light text-center font-weight-bolder"
+              >
+                <h3>Password</h3>
               </label>
-              <div class="input-group has-validation">
+              <div className="input-group has-validation">
                 <input
                   name="password"
                   type="text"
-                  class="form-control is-invalid"
+                  className="form-control is-invalid"
                   id="validationServerUserPassword"
                   placeholder="password"
                   aria-describedby="inputGroupPrepend3 validationServerPasswordFeedback"
                   value={formData.password || ""}
+                  onChange={handleChange}
                   required
                 />
                 <div
                   id="validationServerUserPasswordFeedback"
-                  class="invalid-feedback"
+                  className="invalid-feedback font-weight-bolder text-light bg-dark text-center"
                 >
                   enter valid password. Must be atleast 8 characters.
                 </div>
               </div>
             </div>
-            <div class="mb-3">
-              <span>Upload Profile Picture</span>
+            <div className="mb-3 justify-self-center align-items-center text-center font-weight-bolder">
+              <span className="font-weight-bolder text-white text-center">
+                <h2>Upload Profile Picture</h2>
+              </span>
               <input
                 name="profPic"
                 type="file"
-                class="form-control"
+                className="form-control font-weight-bolder"
                 aria-label="file example"
                 value={formData.profPic || ""}
+                onChange={handleChange}
                 required
               />
-              <div class="invalid-feedback">
+              <div className="invalid-feedback font-weight-bolder text-center">
                 Example invalid form file feedback
               </div>
             </div>
-            <div class="mb-3">
-              <span>Upload Cover Photo</span>
+            <div className="mb-3 justify-self-center align-items-center text-center font-weight-bolder">
+              <span className="font-weight-bolder text-white text-center">
+                <h2>Upload Cover Photo</h2>
+              </span>
               <input
                 name="coverPic"
                 type="file"
-                class="form-control"
+                className="form-control font-weight-bolder"
                 aria-label="file example"
                 value={formData.coverPic || ""}
+                onChange={handleChange}
                 required
               />
-              <div class="invalid-feedback">
+              <div className="invalid-feedback font-weight-bolder text-center">
                 Example invalid form file feedback
               </div>
             </div>
-            <label>
-              Pick your clan:
+            <label className="text-light text-center">
+              <div className="justify-self-center align-items-center text-center font-weight-bolder">
+                <h2>Pick your clan:</h2>
+              </div>
               <select name="clan" value={formData.clan} onChange={handleChange}>
                 <option value="DR">DrPhilInc</option>
                 <option value="Sensi">KneelTheGrassTysonsLLC</option>
                 <option value="Sir">ShrekSquad</option>
                 <option value="Yeezy">FakeYeezyGang</option>
-                <option value="Proffesor">ProffessorPBHoleNinjaMafiaRepostCartel</option>
+                <option value="Proffessor">
+                  ProffessorPBHoleNinjaMafiaRepostCartel
+                </option>
                 <option value="Big">EastSeasmeStElmoHittas</option>
                 <option value="lord">LordFarsquaad</option>
                 <option value="Bhad">BhadBarbies</option>
@@ -185,11 +240,16 @@ export default function Register(props) {
                 <option value="O_______O">IceAgeSidDynasty</option>
                 <option value="{">LebronHairline</option>
                 <option value="Sampler">AllTheCosctoSamples</option>
-                <option value="TearsAreFuel">RoombasCodedwithHumanEmotionsAndDesires</option>
+                <option value="TearsAreFuel">
+                  RoombasCodedwithHumanEmotionsAndDesires
+                </option>
               </select>
             </label>
-                        <div class="col-12">
-              <button class="btn btn-primary" type="submit">
+            <div class="col-12 justify-self-center text-center align-items-center">
+              <button
+                className="btn btn-primary font-weight-bolder"
+                type="submit"
+              >
                 Submit form
               </button>
             </div>
