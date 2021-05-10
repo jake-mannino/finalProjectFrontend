@@ -1,6 +1,7 @@
 redirect
 user navi
 	protected route
+fix validation messages on login and sign-up (auth.js)
 
 
 
