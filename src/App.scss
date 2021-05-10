@@ -24,12 +24,12 @@
 }
 
 
-  .tornado:hover  {
+  .tornado:not(:hover) {
     animation: Tornado-mode 1s;
     animation-iteration-count: infinite;
   }
 
-.polaroidPicture:hover {
+.polaroidPicture:not(:hover) {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
