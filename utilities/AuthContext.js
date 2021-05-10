@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { axiosHelper } from "./axiosHelper";
 
 
 
@@ -10,23 +11,31 @@ import { createContext } from "react";
         const [token, setToken] = useState('')
 
         useEffect(() => {
-            window.localStorage.getItem('token');
+            let lsToken = window.localStorage.getItem('token');
             if (lsToken){
                 setToken(lsToken)
             }
         }, [])
 
         function register(registrationData) {
+             axiosHelper({method:'post', url: 'api/register', successMethod: saveToken})
 
         }
 
-        function login(registrationData) {
+        function saveToken(res){
+           const APItoken = res.data.data.token;
+           setToken(APItoken)
+           window.localStorage.setItem('token', APItoken)
+        }
 
+        function login(loginData) {
+            axiosHelper({method:'post', url: 'oauth/token'})
         }
 
         function logout(registrationData) {
+            axiosHelper({method: 'get', url: 'api/logout'})
  
-        }
+         }
         //sign up (auth)
         //log in
         //getting user info (token or userdata)

@@ -1,12 +1,11 @@
-import React, { useState, useEffect} from 'react';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
-import './App.scss'
-import Navi from './components/Navi'
-import Register from './components/Register'
-import Auth from './components/Auth'
-import backgroundH from '../src/RaptorJakeOnTheProwl.gif';
-
+import "./App.scss";
+import Navi from "./components/Navi";
+import Register from "./components/Register";
+import Auth from "./components/Auth";
+import backgroundH from "../src/RaptorJakeOnTheProwl.gif";
 
 // var Link = React.createClass({
 //   getInitialState: function(){
@@ -38,27 +37,28 @@ import backgroundH from '../src/RaptorJakeOnTheProwl.gif';
 // }
 function App() {
   return (
-    <div className="App"
-    class="bk_Img"
-      style={{
-        backgroundImage: "url(" + backgroundH + ")",
-        backgroundSize: "cover",
-        height: "100vh",
-      }}>
-      <Router>
-        <Navi 
-        //token
-        // deleteToken={deleteToken}
-        />
-        <Switch> 
-        <Route path='/auth'>
-          <Auth/>
-        </Route>
-          <Route path='/register'>
-            <Register/>
-
-          </Route>
-          {/* <Route exact={true} path="a">
+      <div
+        className="App"
+        class="bk_Img"
+        style={{
+          backgroundImage: "url(" + backgroundH + ")",
+          backgroundSize: "cover",
+          height: "100vh",
+        }}
+      >
+        <Router>
+          <Navi
+          //token
+          // deleteToken={deleteToken}
+          />
+          <Switch>
+            <Route path="/auth">
+              <Auth />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            {/* <Route exact={true} path="a">
             <Register saveToken={saveToken} />
             </Route>
             <Route exact={true} path="a">
@@ -70,9 +70,9 @@ function App() {
             custom hook
               useAuth
           */}
-        </Switch>
-      </Router>
-    </div>
+          </Switch>
+        </Router>
+      </div>
   );
 }
 export default App;
