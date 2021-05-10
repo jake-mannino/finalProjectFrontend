@@ -1,0 +1,62 @@
+redirect
+user navi
+	protected route
+
+
+
+actions.js
+appcontextprovider
+pass user protectednavi
+axiosHelper
+
+
+accountManager,js
+	different auth levels
+
+user to user relationships table
+	follow, block, react
+
+tracks generic component
+	wavesurfer render
+		
+		option button for spins :not(:hover) if playing
+
+home feed
+	tracks of who user is following
+likes feed
+	tracks user liked
+hates feed
+	tracks user hated
+confused feed
+	tracks user confused
+
+following feed
+followers feed 
+	return users grid of prof pics 
+
+			
+
+	Resonance render
+	resonance editor
+		optional,
+			? upload multiple : becomes playlist
+			? enter value in resonance datas
+				(room shape, material, user postion, x,y,z of sound layers) 
+
+
+trackUpload.js
+
+
+user to tracks relationships table
+
+user to playlists relationships
+
+comments
+
+
+
+
+
+
+
+
