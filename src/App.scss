@@ -46,3 +46,8 @@
 .yungmoney {
 background-color: rgba( 4, 2, 128, 0.4);
 }
+
+h1:hover {
+  animation: shake 0.8s;
+  animation-iteration-count: infinite;
+}
