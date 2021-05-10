@@ -28,6 +28,11 @@
     animation: Tornado-mode 1s;
     animation-iteration-count: infinite;
   }
+  .bk_Img:not(:hover) {
+    animation: Tornado-mode 2s;
+    animation-iteration-count: infinite;
+  }
+  
 
 .polaroidPicture:not(:hover) {
   animation: shake 0.5s;

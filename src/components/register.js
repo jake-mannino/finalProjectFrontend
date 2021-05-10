@@ -2,39 +2,16 @@ import React, { useState } from "react";
 // import Auth from 'Auth.js';
 import axios from "axios";
 import { render } from "react-dom";
+import registrationValidation from '../utilities/RegisterValidation';
+import useForm from "../utilities/useForm";
+
 
 export default function Register(props) {
-  const [formData, setFormData,] = useState({});
-
-  const handleChange = (e) => {
-    setFormData((previousState) => {
-      const value =
-        e.target.type === "checkbox" ? e.target.checked : e.target.value;
-      return {
-        ...previousState,
-        [e.target.name]: value,
-      };
-    });
-  // formData {
-  //   name:
-  //   email:
-  //   username:
-  //   terms:
-  //   profPic:
-  //   coverPic:
-  //   clan:
-  // }
-  //  formData.this.props?!isValid&&!null: render(
-  //    formData.this.props.invalidFeedback)
-  //    ||formData.this.props?isValid: render(
-  //     formData.this.props.validFeeback)
-   }
-  const handleSub = (e) => {
-    e.preventDefault();
+  const register = (values) => {
     const apiUrl =
       "https://loudfog-yomannino549969.codeanyapp.com/api/register";
     axios
-      .post(apiUrl, formData)
+      .post(apiUrl, values)
       .then((response) => {
         console.log(response);
         //save token
@@ -43,11 +20,32 @@ export default function Register(props) {
         //registration validation
         //useHistory push to Dashboard
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((errors) => {
+        console.log(errors);
       });
   };
-  console.log(formData);
+  const {
+    values,
+    handleChange,
+    handleSubmit,
+    errors,
+   } = useForm(register, registrationValidation);
+  // values {
+  //   name:
+  //   email:
+  //   username:
+  //   terms:
+  //   profPic:
+  //   coverPic:
+  //   clan:
+  // }
+  //  values.this.props?!isValid&&!null: render(
+  //    values.this.props.invalidFeedback)
+  //    ||values.this.props?isValid: render(
+  //     values.this.props.validFeeback)
+ 
+
+console.log(values);
   //setup form validation
   //setup error handling from API
   return (
@@ -55,7 +53,7 @@ export default function Register(props) {
     <div className="polaroidPicture">
       <main>
         <div>
-          <form className="row g-3" onSubmit={handleSub}>
+          <form className="row g-3" onSubmit={handleSubmit}>
             <div className="col-md-4 justify-self-center text-center align-items-center">
               <label
                 for="validationServer01"
@@ -70,13 +68,16 @@ export default function Register(props) {
               <input
                 name="name"
                 type="text"
-                className="form-control is-valid"
+                className="form-control "{...`input ${errors.name && 'is-danger'}`}
                 id="validationServer01"
                 placeholder="firstname lastname"
-                value={formData.name || ""}
+                value={values.name || ""}
                 onChange={handleChange}
                 required
               />
+                 {errors.name && (
+                <p className="help is-danger">{errors.name}</p>
+              )}
               <div className="valid-feedback text-light bg-dark text-center">
                 ok cool
               </div>
@@ -93,12 +94,15 @@ export default function Register(props) {
               <input
                 name="email"
                 type="email"
-                className="form-control is-valid text-info font-weight-bolder justify-self-center text-center align-items-center"
+                className="form-control text-info font-weight-bolder justify-self-center text-center align-items-center" {...`input ${errors.email && 'is-danger'}`}
                 id="validationServer02"
-                value={formData.email || ""}
+                value={values.email || ""}
                 onChange={handleChange}
                 required
               />
+              {errors.email && (
+                <p className="help is-danger">{errors.email}</p>
+              )}
               <div className="valid-feedback font-weight-bolder text-light bg-dark text-center">
                 bet
               </div>
@@ -121,13 +125,16 @@ export default function Register(props) {
                 <input
                   name="username"
                   type="text"
-                  className="form-control is-invalid justify-self-center align-items-center text-center"
+                  className="form-control justify-self-center align-items-center text-center" {...`input ${errors.username && 'is-danger'}`}
                   id="validationServerUsername"
-                  value={formData.username || ""}
+                  value={values.username || ""}
                   aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
                   onChange={handleChange}
                   required
                 />
+                      {errors.username && (
+                <p className="help is-danger">{errors.username}</p>
+              )}
                 <div
                   id="validationServerUsernameFeedback"
                   className="invalid-feedback text-light bg-dark text-center"
@@ -142,14 +149,17 @@ export default function Register(props) {
                   <div className="form-check justify-self-center text-center align-items-center">
                     <input
                       name="terms"
-                      className="card form-check-input is-invalid justify-self-center align-items-center text-center"
+                      classNameName="card form-check-input justify-self-center align-items-center text-center" {...`input ${errors.terms && 'is-danger'}`}
                       type="checkbox"
-                      value={formData.terms || ""}
+                      value={values.terms || ""}
                       id="invalidCheck3"
                       aria-describedby="invalidCheck3Feedback"
                       onChange={handleChange}
                       required
                     />
+                    {errors.terms && (
+                <p className="help is-danger">{errors.terms}</p>
+              )}
                     <label
                       className="form-check-label font-weight-bolder justify-self-center align-items-center text-center"
                       for="invalidCheck3"
@@ -179,14 +189,17 @@ export default function Register(props) {
                 <input
                   name="password"
                   type="text"
-                  className="form-control is-invalid"
+                  className="form-control is-invalid"{...`input ${errors.password && 'is-danger'}`}
                   id="validationServerUserPassword"
                   placeholder="password"
                   aria-describedby="inputGroupPrepend3 validationServerPasswordFeedback"
-                  value={formData.password || ""}
+                  value={values.password || ""}
                   onChange={handleChange}
                   required
                 />
+                {errors.password && (
+                <p className="help is-danger">{errors.password}</p>
+              )}
                 <div
                   id="validationServerUserPasswordFeedback"
                   className="invalid-feedback font-weight-bolder text-light bg-dark text-center"
@@ -202,12 +215,15 @@ export default function Register(props) {
               <input
                 name="profPic"
                 type="file"
-                className="form-control font-weight-bolder"
+                className="form-control font-weight-bolder"{...`input ${errors.profPic && 'is-danger'}`}
                 aria-label="file example"
-                value={formData.profPic || ""}
+                value={values.profPic || ""}
                 onChange={handleChange}
                 required
               />
+              {errors.profPic && (
+                <p className="help is-danger">{errors.profPic}</p>
+              )}
               <div className="invalid-feedback font-weight-bolder text-center">
                 Example invalid form file feedback
               </div>
@@ -219,12 +235,15 @@ export default function Register(props) {
               <input
                 name="coverPic"
                 type="file"
-                className="form-control font-weight-bolder"
+                className="form-control font-weight-bolder" {...`input ${errors.coverPic && 'is-danger'}`}
                 aria-label="file example"
-                value={formData.coverPic || ""}
+                value={values.coverPic || ""}
                 onChange={handleChange}
                 required
               />
+              {errors.coverPic && (
+                <p className="help is-danger">{errors.coverPic}</p>
+              )}
               <div className="invalid-feedback font-weight-bolder text-center">
                 Example invalid form file feedback
               </div>
@@ -233,7 +252,7 @@ export default function Register(props) {
               <div className="justify-self-center align-items-center text-center font-weight-bolder">
                 <h2>Pick your clan:</h2>
               </div>
-              <select name="clan" value={formData.clan} onChange={handleChange}>
+              <select name="clan" value={values.clan} onChange={handleChange}>
                 <option value="DR">DrPhilInc</option>
                 <option value="Sensi">KneelTheGrassTysonsLLC</option>
                 <option value="Sir">ShrekSquad</option>
@@ -257,6 +276,9 @@ export default function Register(props) {
                 </option>
               </select>
             </label>
+            {errors.clan && (
+                <p className="help is-danger">{errors.clan}</p>
+              )}
             <div class="col-12 justify-self-center text-center align-items-center">
               <button
                 className="btn btn-primary font-weight-bolder"
