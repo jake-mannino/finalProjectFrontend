@@ -125,7 +125,7 @@ console.log(values);
                 <input
                   name="username"
                   type="text"
-                  className="form-control justify-self-center align-items-center text-center" {...`input ${errors.username && 'is-danger'}`}
+                  className="form-control is-invalid justify-self-center align-items-center text-center" {...`input ${errors.username && 'is-danger'}`}
                   id="validationServerUsername"
                   value={values.username || ""}
                   aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
