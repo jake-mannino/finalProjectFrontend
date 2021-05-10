@@ -4,6 +4,5 @@ const AppContext = React.createContext({});
 
 export const AppProvider = AppContext.Provider;
 
-export default AppContext;
 
   

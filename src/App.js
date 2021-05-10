@@ -6,6 +6,7 @@ import Navi from "./components/Navi";
 import Register from "./components/Register";
 import Auth from "./components/Auth";
 import backgroundH from "../src/RaptorJakeOnTheProwl.gif";
+import { AppProvider } from "./utilities/AppContextProvider";
 
 // var Link = React.createClass({
 //   getInitialState: function(){
@@ -37,6 +38,7 @@ import backgroundH from "../src/RaptorJakeOnTheProwl.gif";
 // }
 function App() {
   return (
+    <AppProvider>
       <div
         className="App"
         class="bk_Img"
@@ -73,6 +75,7 @@ function App() {
           </Switch>
         </Router>
       </div>
+      </AppProvider>
   );
 }
 export default App;

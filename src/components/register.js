@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 // import Auth from 'Auth.js';
 import axios from "axios";
+import { render } from "react-dom";
 
 export default function Register(props) {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData,] = useState({});
 
   const handleChange = (e) => {
     setFormData((previousState) => {
@@ -14,7 +15,20 @@ export default function Register(props) {
         [e.target.name]: value,
       };
     });
-  };
+  // formData {
+  //   name:
+  //   email:
+  //   username:
+  //   terms:
+  //   profPic:
+  //   coverPic:
+  //   clan:
+  // }
+  //  formData.this.props?!isValid&&!null: render(
+  //    formData.this.props.invalidFeedback)
+  //    ||formData.this.props?isValid: render(
+  //     formData.this.props.validFeeback)
+   }
   const handleSub = (e) => {
     e.preventDefault();
     const apiUrl =
@@ -36,7 +50,6 @@ export default function Register(props) {
   console.log(formData);
   //setup form validation
   //setup error handling from API
-
   return (
     //link to login.js in nav /below heade
     <div className="polaroidPicture">
@@ -119,7 +132,7 @@ export default function Register(props) {
                   id="validationServerUsernameFeedback"
                   className="invalid-feedback text-light bg-dark text-center"
                 >
-                  choose a username
+                  username must start with one of the following: OG, O.G., drPhill, Dr. Phill, DrPhill, lil, bigHomie, BigHomie, yung, Yung, Dr, Dr., dr, Professor, professor, Sir, sir, Lord, lord, Shrek, shrek, getOuttaMySwamp.
                 </div>
               </div>
             </div>
