@@ -58,7 +58,7 @@ export default function Auth(props) {
             <label
               for="validationServer02"
               class="form-label text-white"
-              value={values.username || ""}
+              value={values.email|| ""}
             >
               <h3>Email</h3>
             </label>

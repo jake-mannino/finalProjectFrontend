@@ -118,7 +118,7 @@ export default function Register(props) {
                 <input
                   name="username"
                   type="text"
-                  className={`form-control is-invalid ${
+                  className={`form-control is-valid ${
                     values.username && "is-valid"
                   } ${!!errors.username && "is-invalid"}`}
                   id="validationServerUsername"
