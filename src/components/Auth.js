@@ -78,7 +78,7 @@ export default function Auth(props) {
             </div>
           </div>
           <div>
-            <div class="col d-block">
+            <div class="col d-block justify-self-center text-center align-items-center">
               <label
                 for="validationServerUserPassword"
                 class="form-label text-white"
