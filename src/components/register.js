@@ -263,7 +263,7 @@ console.log(values);
                 <option id="3" value="Sir">ShrekSquad</option>
                 <option id="4" value="Yeezy">FakeYeezyGang</option>
                 <option value="Proffessor">
-                  ProffessorPBHoleNinjaMafiaRepostCartel
+                  ProfessorPBHoleCult
                 </option>
                 <option id="5" value="Big">EastSeasmeStElmoHittas</option>
                 <option id="6" value="lord">LordFarsquaad</option>
