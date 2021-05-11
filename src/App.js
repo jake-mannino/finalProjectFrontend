@@ -61,6 +61,9 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
+            <Route path="/testtrackplayer">
+              <TrackPlayer url="https://www.mfiles.co.uk/mp3-downloads/franz-schubert-standchen-serenade.mp3"/>
+            </Route>
             {/* <Route exact={true} path="a">
             <Register saveToken={saveToken} />
             </Route>
@@ -75,8 +78,6 @@ function App() {
           */}
           </Switch>
         </Router>
-        <TrackPlayer>
-        </TrackPlayer>
       </div>
       </AppProvider>
   );

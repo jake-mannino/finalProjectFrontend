@@ -6,6 +6,7 @@ import useForm from "../utilities/useForm";
 
 export default function Register(props) {
   const register = (values) => {
+    console.log(values);
     const apiUrl =
       "https://loudfog-yomannino549969.codeanyapp.com/api/register";
     axios
@@ -40,7 +41,7 @@ export default function Register(props) {
   //    ||values.this.props?isValid: render(
   //     values.this.props.validFeeback)
 
-  console.log(values);
+  console.log(values, errors);
   //setup form validation
   //setup error handling from API
   return (
@@ -151,7 +152,7 @@ export default function Register(props) {
                   <div className="form-check justify-self-center text-center align-items-center">
                     <input
                       name="terms"
-                      classNameName={`card form-check-input ${
+                      className={`${
                         values.terms && "is-valid"
                       } ${!!errors.terms && "is-invalid"}`}
                       type="checkbox"
@@ -318,7 +319,7 @@ export default function Register(props) {
               </select>
             </label>
             {errors.clan && <p className="help is-danger">{errors.clan}</p>}
-            <div class="col-12 justify-self-center text-center align-items-center">
+            <div className="col-12 justify-self-center text-center align-items-center">
               <button
                 className="btn btn-primary font-weight-bolder"
                 type="submit"

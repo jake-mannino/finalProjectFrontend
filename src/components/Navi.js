@@ -27,7 +27,6 @@ export default function Navi(props) {
       </div>
     </nav>
     </div>
-    <TrackPlayer/>
     </div>
   );
 }
