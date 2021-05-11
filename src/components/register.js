@@ -138,7 +138,7 @@ export default function Register(props) {
                   <p className="text-light bg-dark text-center">
                     Username MUST start with one of the following: "OG", "O.G.",
                     "drPhill", "Dr. Phill", "DrPhill", "lil", "bigHomie",
-                    "BigHomie", "yung", "Yung", "Dr", "DrPepper, "dr",
+                    "BigHomie", "yung", "Yung", "Dr", "DrPepper", "dr",
                     "Professor", "professor", "Sir", "sir", "Lord", "lord",
                     "Shrek", "shrek", "getOuttaMySwamp".
                   </p>
