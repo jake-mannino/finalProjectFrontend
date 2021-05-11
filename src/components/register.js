@@ -59,8 +59,8 @@ console.log(values);
                 for="validationServer01"
                 className="form-label font-weight-bolder"
               >
-                <div className="justify-self-center text-center align-items-center">
-                  <h3 className="text-light font-weight-bolder justify-self-center text-center align-items-center">
+                <div className="yea">
+                  <h3 className="text-light font-weight-bolder">
                     Name (First + Last)
                   </h3>
                 </div>
@@ -151,7 +151,7 @@ console.log(values);
                   <div className="form-check justify-self-center text-center align-items-center">
                     <input
                       name="terms"
-                      classNameName="card form-check-input justify-self-center align-items-center text-center" {...`input ${errors.terms && 'is-danger'}`}
+                      classNameName={`card form-check-input ${values.terms && 'is-valid'} ${!!errors.terms && 'is-invalid'}`}
                       type="checkbox"
                       value={values.terms || ""}
                       id="invalidCheck3"
@@ -217,7 +217,8 @@ console.log(values);
               <input
                 name="profPic"
                 type="file"
-                className="form-control font-weight-bolder"{...`input ${errors.profPic && 'is-danger'}`}
+                placeholder="uglyface.jpg"
+                className={`form-control font-weight-bolder ${values.profPic && 'is-valid'} ${!!errors.profPic && 'is-invalid'}`}
                 aria-label="file example"
                 value={values.profPic || ""}
                 onChange={handleChange}
@@ -237,7 +238,8 @@ console.log(values);
               <input
                 name="coverPic"
                 type="file"
-                className="form-control font-weight-bolder" {...`input ${errors.coverPic && 'is-danger'}`}
+                placeholder="CrookedHairline.png"
+                className={`form-control font-weight-bolder ${values.coverPic && 'is-valid'} ${!!errors.coverPic && 'is-invalid'}`}
                 aria-label="file example"
                 value={values.coverPic || ""}
                 onChange={handleChange}
