@@ -109,7 +109,7 @@ export default function Auth(props) {
                   </h4>
                 </div>
               </div>
-              <div class="col-12 d-block">
+              <div class="col-12 d-block justify-self-center text-center align-items-center">
                 <button class="btn btn-primary" type="submit">
                   Enter
                 </button>
