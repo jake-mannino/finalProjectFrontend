@@ -57,7 +57,8 @@ export default function Auth(props) {
             <input
               name="email"
               type="email"
-              class="form-control is-valid"
+              placeholder="CornDogCyclone@BahamaIceSculpterGuild.gov"
+              class={`form-control font-weight-bolder ${values.email && 'is-valid'} ${!!errors.email && 'is-invalid'}`}
               id="validationServer02"    
               onChange={handleChange}          
               required
@@ -65,7 +66,7 @@ export default function Auth(props) {
             <div class="valid-feedback"><h4>bet</h4></div>
           </div>
           <div>
-          <div class="col d-block justify-self-center align-items-center text-center">
+          <div class="col d-block">
             <label for="validationServerUserPassword" class="form-label text-white" value={formData.password || ""}>
             <h3>
               Password
@@ -75,23 +76,23 @@ export default function Auth(props) {
               <input
                 name="password"
                 type="text"
-                class="form-control is-invalid"
+                className={`form-control ${values.password && 'is-valid'} ${!!errors.password && 'is-invalid'}`}
                 id="validationServerUserPassword"
-                placeholder="password"
+                placeholder="we've already sold your user data and password just fyi"
                 aria-describedby="inputGroupPrepend3 validationServerPasswordFeedback"
                 onChange={handleChange}          
                 required
               />
               <div
                 id="validationServerUserPasswordFeedback"
-                class="invalid-feedback font-weight-bolder text-light justify-self-center align-items-center text-center"
+                class="invalid-feedback font-weight-bolder text-light"
               >
-               <h4>enter valid password. Must be atleast 8 characters.</h4>
+               <h4>Enter valid password. This computer will self-destruct upon invalid entry. 8 characters. One typo = One life.</h4>
               </div>
               </div>
-              <div class="col-12 d-block justify-self-center align-items-center text-center">
+              <div class="col-12 d-block">
               <button class="btn btn-primary" type="submit">
-                Submit form
+                Enter
               </button>
               </div>
             </div>
