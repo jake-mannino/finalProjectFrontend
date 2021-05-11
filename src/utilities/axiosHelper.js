@@ -30,8 +30,8 @@ export function axiosHelperDefaultValues(
 }
   const axiosObj = {
       method:"get", 
-      data:{username:"jake"}
-      token: "123456789"
+      data:{username:"jake"},
+      token: "123456789",
   }
 
   axiosHelperInputObject (axiosObj)

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-
+import TrackPlayer from "./TrackPlayer"
 export default function Navi(props) {
   return (
 
@@ -27,6 +27,7 @@ export default function Navi(props) {
       </div>
     </nav>
     </div>
+    <TrackPlayer/>
     </div>
   );
 }
