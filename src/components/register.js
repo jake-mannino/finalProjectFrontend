@@ -57,7 +57,7 @@ console.log(values);
             <div className="col-md-4 justify-self-center text-center align-items-center">
               <label
                 for="validationServer01"
-                className="form-label font-weight-bolder justify-self-center text-center align-items-center"
+                className="form-label font-weight-bolder"
               >
                 <div className="justify-self-center text-center align-items-center">
                   <h3 className="text-light font-weight-bolder justify-self-center text-center align-items-center">
@@ -68,9 +68,9 @@ console.log(values);
               <input
                 name="name"
                 type="text"
-                className="form-control "{...`input ${errors.name && 'is-danger'}`}
+                className={`form-control ${values.name && 'is-valid'} ${!!errors.name && 'is-invalid'}`}
                 id="validationServer01"
-                placeholder="firstname lastname"
+                placeholder="Tim Apple"
                 value={values.name || ""}
                 onChange={handleChange}
                 required
@@ -87,14 +87,15 @@ console.log(values);
                 for="validationServer02"
                 className="form-label font-weight-bolder"
               >
-                <h3 className="text-light font-weight-bolder justify-self-center text-center align-items-center">
+                <h3 className="text-light font-weight-bolder">
                   Email
                 </h3>
               </label>
               <input
                 name="email"
                 type="email"
-                className="form-control text-info font-weight-bolder justify-self-center text-center align-items-center" {...`input ${errors.email && 'is-danger'}`}
+                placeholder="cheddarbiscuitrage@CarbAA.edu"
+                className={`form-control font-weight-bolder ${values.email && 'is-valid'} ${!!errors.email && 'is-invalid'}`}
                 id="validationServer02"
                 value={values.email || ""}
                 onChange={handleChange}
@@ -125,10 +126,11 @@ console.log(values);
                 <input
                   name="username"
                   type="text"
-                  className="form-control is-invalid justify-self-center align-items-center text-center" {...`input ${errors.username && 'is-danger'}`}
+                  className={`form-control is-invalid ${values.username && 'is-valid'} ${!!errors.username && 'is-invalid'}`}}
                   id="validationServerUsername"
-                  value={values.username || ""}
+                  placeholder="Professor Uno Reverse"
                   aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
+                  value={values.username || ""}
                   onChange={handleChange}
                   required
                 />
@@ -139,7 +141,7 @@ console.log(values);
                   id="validationServerUsernameFeedback"
                   className="invalid-feedback text-light bg-dark text-center"
                 >
-                  username must start with one of the following: OG, O.G., drPhill, Dr. Phill, DrPhill, lil, bigHomie, BigHomie, yung, Yung, Dr, Dr., dr, Professor, professor, Sir, sir, Lord, lord, Shrek, shrek, getOuttaMySwamp.
+                  <p className="text-light bg-dark text-center">Username MUST start with one of the following: "OG", "O.G.", "drPhill", "Dr. Phill", "DrPhill", "lil", "bigHomie", "BigHomie", "yung", "Yung", "Dr", "DrPepper, "dr", "Professor", "professor", "Sir", "sir", "Lord", "lord", "Shrek", "shrek", "getOuttaMySwamp".</p>
                 </div>
               </div>
             </div>
@@ -188,17 +190,17 @@ console.log(values);
               <div className="input-group has-validation">
                 <input
                   name="password"
-                  type="text"
-                  className="form-control is-invalid"{...`input ${errors.password && 'is-danger'}`}
+                  type="password"
+                  className={`form-control ${values.password && 'is-valid'} ${!!errors.password && 'is-invalid'}`}
                   id="validationServerUserPassword"
-                  placeholder="password"
+                  placeholder="we will sell your password to foreign governments and elon musk"
                   aria-describedby="inputGroupPrepend3 validationServerPasswordFeedback"
                   value={values.password || ""}
                   onChange={handleChange}
                   required
                 />
                 {errors.password && (
-                <p className="help is-danger">{errors.password}</p>
+                <p className="help is-invalid">{errors.password}</p>
               )}
                 <div
                   id="validationServerUserPasswordFeedback"
@@ -248,30 +250,31 @@ console.log(values);
                 Example invalid form file feedback
               </div>
             </div>
+            
             <label className="text-light text-center">
               <div className="justify-self-center align-items-center text-center font-weight-bolder">
                 <h2>Pick your clan:</h2>
               </div>
               <select name="clan" value={values.clan} onChange={handleChange}>
-                <option value="DR">DrPhilInc</option>
-                <option value="Sensi">KneelTheGrassTysonsLLC</option>
-                <option value="Sir">ShrekSquad</option>
-                <option value="Yeezy">FakeYeezyGang</option>
+                <option id="1" value="DR">DrPhilInc</option>
+                <option id="2" value="Sensi">KneelTheGrassTysonsLLC</option>
+                <option id="3" value="Sir">ShrekSquad</option>
+                <option id="4" value="Yeezy">FakeYeezyGang</option>
                 <option value="Proffessor">
                   ProffessorPBHoleNinjaMafiaRepostCartel
                 </option>
-                <option value="Big">EastSeasmeStElmoHittas</option>
-                <option value="lord">LordFarsquaad</option>
-                <option value="Bhad">BhadBarbies</option>
-                <option value="OG">ChurchOfDannyDevito</option>
-                <option value="lilhomie">RichHomieQuans</option>
-                <option value="thicc">ThiccMrKrabs</option>
-                <option value="BrocclisMaior">BroccoliPosse</option>
-                <option value="OGTater">PotatoHeads</option>
-                <option value="O_______O">IceAgeSidDynasty</option>
-                <option value="{">LebronHairline</option>
-                <option value="Sampler">AllTheCosctoSamples</option>
-                <option value="TearsAreFuel">
+                <option id="5" value="Big">EastSeasmeStElmoHittas</option>
+                <option id="6" value="lord">LordFarsquaad</option>
+                <option id="7" value="Bhad">BhadBarbies</option>
+                <option id="8" value="OG">ChurchOfDannyDevito</option>
+                <option id="9" value="lilhomie">RichHomieQuans</option>
+                <option id="10" value="thicc">ThiccMrKrabs</option>
+                <option id="11" value="BrocclisMaior">BroccoliPosse</option>
+                <option id="12" value="OGTater">PotatoHeads</option>
+                <option id="13" value="O_______O">IceAgeSidDynasty</option>
+                <option id="14" value="{">LebronHairline</option>
+                <option id="15" value="Sampler">AllTheCosctoSamples</option>
+                <option id="16" value="TearsAreFuel">
                   RoombasCodedwithHumanEmotionsAndDesires
                 </option>
               </select>

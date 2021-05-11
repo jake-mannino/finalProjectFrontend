@@ -1,0 +1,30 @@
+
+
+get resonance working
+
+all users see eachother, or recently uploaded tracks
+
+    userThumb component
+    trackPlayer component
+        wavesurfer
+
+    playlist compenents
+    reso Playlist components
+
+track uploader
+
+    wavesurfer.js track object
+
+            imported in playlists compenents
+
+    special playlists for resonance
+        still wave surfer playlist but the different tracks /layers (each their own wave surfer track componenet) can play simultaneously
+        mvp 4 sound objects
+        xyz cordinates
+            animations
+            transform
+            basic e shapes, vector paths, similar to bouncing balls code, make them bounce off each other or withing the confines of a space
+        room
+        user postion
+            init centered
+                arrow key controls to increment and or decrement xyz cordinates of user relative postion

@@ -3,42 +3,40 @@ import React from 'react'
 export default function registrationValidation(values){
     let errors = {};
     //name
-
     if(!values.name){ 
         errors.name = 'name???????';
     }
-
     //email
     if(!values.email){
-        errors.email = 'email????????';
+        errors.email = 'email????';
     } else if(!/\S+@\S+\.\S/.test(values.email)){
         errors.email = 'enter a real email to avoid being deleted from reality';
     }
     //username
     if(!values.username){
-        errors.username = 'username????????';
+        errors.username = 'username????';
     }
     //password
     if(!values.password){
-        errors.password = 'password??????';
+        errors.password = 'password????';
     } else if(values.password.length < 7) {
-        errors.password = 'not long enough, must be 8 or more characters';
+        errors.password = 'not long enough, water and nourish your password so it may grow to 8 or more characters';
     }
     //terms
     if(!values.terms){
-        errors.terms = 'agree if you cherish life';
+        errors.terms = 'basically we own you and will def sell your data to third-partys and foreign govs,you the user are the product here, you pay us in personal data';
     }
     //profPic
     if(!values.profPic){
-        errors.profPic = 'upload profile picture or else';
+        errors.profPic = 'upload profile picture';
     }
     //coverPic
     if(!values.coverPic){
-        errors.coverPic = 'upload cover photo or else';
+        errors.coverPic = 'upload cover photo before it uploads you';
     }
     //clan
     if(!values.clan){
-        errors.clan = 'pick clan or else';
+        errors.clan = 'pick a clan for protection';
 
     }
     return errors;
