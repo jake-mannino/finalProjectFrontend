@@ -126,7 +126,7 @@ console.log(values);
                 <input
                   name="username"
                   type="text"
-                  className={`form-control is-invalid ${values.username && 'is-valid'} ${!!errors.username && 'is-invalid'}`}}
+                  className={`form-control is-invalid ${values.username && 'is-valid'} ${!!errors.username && 'is-invalid'}`}
                   id="validationServerUsername"
                   placeholder="Professor Uno Reverse"
                   aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback"
