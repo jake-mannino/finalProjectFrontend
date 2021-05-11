@@ -15,6 +15,17 @@ export default function registrationValidation(values){
     //username
     if(!values.username){
         errors.username = 'username????';
+        else if(!values.username.startsWith("OG" || "O.G."||
+        "drPhill"|| "Dr. Phill"|| "DrPhill"|| "lil"|| "bigHomie"||
+        "BigHomie"|| "yung"|| "Yung"|| "Dr"|| "DrPepper"|| "dr"||
+        "Professor"|| "professor"|| "Sir"|| "sir"|| "Lord"|| "lord"||
+        "Shrek"|| "shrek"|| "getOuttaMySwamp")){
+            errors.username ='Username MUST start with one of the following: "OG", "O.G.",
+            "drPhill", "Dr. Phill", "DrPhill", "lil", "bigHomie",
+            "BigHomie", "yung", "Yung", "Dr", "DrPepper", "dr",
+            "Professor", "professor", "Sir", "sir", "Lord", "lord",
+            "Shrek", "shrek", "getOuttaMySwamp".';
+        }
     }
     //password
     if(!values.password){
