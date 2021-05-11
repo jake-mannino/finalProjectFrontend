@@ -7,6 +7,7 @@ import Register from "./components/Register";
 import Auth from "./components/Auth";
 import backgroundH from "../src/RaptorJakeOnTheProwl.gif";
 import { AppProvider } from "./utilities/AppContextProvider";
+import TrackPlayer from "./components/TrackPlayer";
 
 // var Link = React.createClass({
 //   getInitialState: function(){
@@ -74,6 +75,8 @@ function App() {
           */}
           </Switch>
         </Router>
+        <TrackPlayer>
+        </TrackPlayer>
       </div>
       </AppProvider>
   );
