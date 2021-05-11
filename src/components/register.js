@@ -9,7 +9,7 @@ import useForm from "../utilities/useForm";
 export default function Register(props) {
   const register = (values) => {
     const apiUrl =
-      "https://loudfog-yomannino549969.codeanyapp.com/register";
+      "https://loudfog-yomannino549969.codeanyapp.com/api/register";
     axios
       .post(apiUrl, values)
       .then((response) => {
