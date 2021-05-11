@@ -86,7 +86,7 @@ export default function Auth(props) {
               >
                 <h3>Password</h3>
               </label>
-              <div class="input-group has-validation">
+              <div class="input-group has-validation justify-self-center text-center align-items-center">
                 <input
                   name="password"
                   type="text"
