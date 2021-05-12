@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import React, { useState, useEffect, Component } from "react";
+import { BrowserRouter as Router, Link, Switch, Route, Redirect } from "react-router-dom";
 
 import "./App.scss";
 import Navi from "./components/Navi";
@@ -8,7 +8,7 @@ import Auth from "./components/Auth";
 import backgroundH from "../src/RaptorJakeOnTheProwl.gif";
 import { AppProvider } from "./utilities/AppContextProvider";
 import TrackPlayer from "./components/TrackPlayer";
-
+import Home from "./components/Home"
 // var Link = React.createClass({
 //   getInitialState: function(){
 //     return {hover: false}
@@ -37,6 +37,41 @@ import TrackPlayer from "./components/TrackPlayer";
 //       </div>
 //     )
 // }
+// handleLogin = () => {
+//   const { state = {} } = this.props.location;
+//   const { prevLocation } = state;
+
+//   this.setState(
+//     {
+//       loggedIn: true,
+//     },
+//     () => {
+//       this.props.history.push(prevLocation || "/home");
+//     }
+//   );
+// };
+
+
+
+const ProtectedRoute = () => ({ component: Home, loggedIn, path, ...rest}) => {
+  return (
+    <Route 
+    path={path}
+    {...rest}
+    render={(props) => {
+        return loggedIn ? <Home {...props} /> : <Redirect to={{
+          pathname: "/",
+          state: {
+            prevLocation: path,
+            error: "login or register first!",
+          },
+        }}
+      />
+    }}
+  />
+  );
+};
+
 function App() {
   return (
     <AppProvider>
@@ -64,6 +99,10 @@ function App() {
             <Route path="/testtrackplayer">
               <TrackPlayer url="https://www.mfiles.co.uk/mp3-downloads/franz-schubert-standchen-serenade.mp3"/>
             </Route>
+            {/* <Route path="/" component={App} />
+            <ProtectedRoute>
+            <Home path="/home" exact component={Home}/>
+            </ProtectedRoute> */}
             {/* <Route exact={true} path="a">
             <Register saveToken={saveToken} />
             </Route>
