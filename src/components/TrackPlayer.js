@@ -3,6 +3,7 @@ import WaveSurfer from "wavesurfer.js";
 import Resonance from "/Users/Mannino/Sites2/finalProjectFrontend/node_modules/resonance-audio/build/resonance-audio";
 import resonanceHelper from "../utilities/resonanceHelper";
 
+
 const formWaveSurferOptions = (ref) => ({
   container: ref,
   waveColor: "#eee",
@@ -66,7 +67,7 @@ export default function TrackPlayer(props) {
   //     })
   //   this.AudioFile.source.setPosition.x = X0;
   //   this.AudioFile.source.setPosition.y = Y0;
-  //   this.AudioFile.source.setPosition.x = Z0;
+  //   this.AudioFile.source.setPosition.z = Z0;
   // }
 
 
@@ -140,7 +141,15 @@ export default function TrackPlayer(props) {
           onChange={onX0change}
           defaultValue={onX0init}
         /> */}
+        <div>
         <label htmlFor="user-x">Listener Horizontal</label>
+        </div>
+        <div>
+        <label htmlFor="user-y">Listener Vertical</label>
+        </div>
+        <div>
+        <label htmlFor="user-z">Listener Z-Depth</label>
+        </div>
       </div>
     </div>
   );

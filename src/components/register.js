@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import registrationValidation from "../utilities/RegisterValidation";
 import useForm from "../utilities/useForm";
-
+import { useAuth } from "../utilities/AuthContext";
 export default function Register(props) {
+  const { saveToken } = useAuth();
   const register = (values) => {
     console.log(values);
     const apiUrl =
@@ -13,7 +14,8 @@ export default function Register(props) {
       .post(apiUrl, values)
       .then((response) => {
         console.log(response);
-        //save token
+        saveToken(response);
+        //saveToken
         //validform
         //useAuth custom hook
         //registration validation
@@ -321,10 +323,10 @@ export default function Register(props) {
             {errors.clan && <p className="help is-danger">{errors.clan}</p>}
             <div className="col-12 justify-self-center text-center align-items-center">
               <button
-                className="btn btn-primary font-weight-bolder"
+                className="btn btn-primary justify-self-center text-center align-items-center font-weight-bolder"
                 type="submit"
               >
-                Submit form
+              Sign Up
               </button>
             </div>
           </form>

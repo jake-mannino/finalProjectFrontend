@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import { axiosHelper } from "./axiosHelper";
 
 
@@ -23,8 +23,13 @@ import { axiosHelper } from "./axiosHelper";
         }
 
         function saveToken(res){
-           const APItoken = res.data.data.token;
-           setToken(APItoken)
+            let APItoken; // Initalize variable
+            if (res.config.url === "https://loudfog-yomannino549969.codeanyapp.com/api/register") {
+                APItoken = res.data.data.token
+            } else if (res.config.url === "https://loudfog-yomannino549969.codeanyapp.com/oauth/token") {
+                APItoken = res.data.access_token
+            }
+            setToken(APItoken)
            window.localStorage.setItem('token', APItoken)
         }
 
@@ -43,7 +48,7 @@ import { axiosHelper } from "./axiosHelper";
         //account manager
             //change password
             //block / unblock
-        return { token, register, login, logout }
+        return { token, register, login, logout, saveToken }
 
 
    } 
@@ -58,6 +63,6 @@ import { axiosHelper } from "./axiosHelper";
        )
    }
 
-   //create custom hook
+ export const useAuth = ()=> useContext(AuthContext);  //create custom hook
 
 export default AuthContext;

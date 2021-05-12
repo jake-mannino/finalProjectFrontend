@@ -1,14 +1,20 @@
 import React, { useState, useEffect, Component } from "react";
-import { BrowserRouter as Router, Link, Switch, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Link,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 import "./App.scss";
 import Navi from "./components/Navi";
 import Register from "./components/Register";
 import Auth from "./components/Auth";
 import backgroundH from "../src/RaptorJakeOnTheProwl.gif";
-import { AppProvider } from "./utilities/AppContextProvider";
+import { AuthProvider } from "./utilities/AuthContext";
 import TrackPlayer from "./components/TrackPlayer";
-import Home from "./components/Home"
+import Home from "./components/Home";
 // var Link = React.createClass({
 //   getInitialState: function(){
 //     return {hover: false}
@@ -51,30 +57,33 @@ import Home from "./components/Home"
 //   );
 // };
 
-
-
-const ProtectedRoute = () => ({ component: Home, loggedIn, path, ...rest}) => {
-  return (
-    <Route 
-    path={path}
-    {...rest}
-    render={(props) => {
-        return loggedIn ? <Home {...props} /> : <Redirect to={{
-          pathname: "/",
-          state: {
-            prevLocation: path,
-            error: "login or register first!",
-          },
-        }}
-      />
-    }}
-  />
-  );
-};
+// const ProtectedRoute = () => ({ component: Home, loggedIn, path, ...rest }) => {
+//   return (
+//     <Route
+//       path={path}
+//       {...rest}
+//       render={(props) => {
+//         return loggedIn ? (
+//           <Home {...props} />
+//         ) : (
+//           <Redirect
+//             to={{
+//               pathname: "/",
+//               state: {
+//                 prevLocation: path,
+//                 error: "login or register first!",
+//               },
+//             }}
+//           />
+//         );
+//       }}
+//     />
+//   );
+// };
 
 function App() {
   return (
-    <AppProvider>
+    <AuthProvider>
       <div
         className="App"
         class="bk_Img"
@@ -96,13 +105,12 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <Route path="/testtrackplayer">
-              <TrackPlayer url="https://www.mfiles.co.uk/mp3-downloads/franz-schubert-standchen-serenade.mp3"/>
+            <Route path="/home">
+              <TrackPlayer url="https://www.mfiles.co.uk/mp3-downloads/franz-schubert-standchen-serenade.mp3" />
             </Route>
-            {/* <Route path="/" component={App} />
-            <ProtectedRoute>
-            <Home path="/home" exact component={Home}/>
-            </ProtectedRoute> */}
+            <Route exact path="/home">
+              <Home />
+            </Route>
             {/* <Route exact={true} path="a">
             <Register saveToken={saveToken} />
             </Route>
@@ -118,7 +126,7 @@ function App() {
           </Switch>
         </Router>
       </div>
-      </AppProvider>
+    </AuthProvider>
   );
 }
 export default App;

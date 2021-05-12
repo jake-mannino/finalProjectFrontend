@@ -4,8 +4,12 @@ import axios from "axios";
 import "../App.scss";
 import registrationValidation from "../utilities/RegisterValidation";
 import useForm from "../utilities/useForm";
+import { useAuth } from "../utilities/AuthContext";
+import { Redirect } from "react-router-dom";
 
 export default function Auth(props) {
+    const { saveToken, token } = useAuth();
+
   const auth = (values) => {
     // const handleChange = (e) => {
     //   setFormData((previousState) => {
@@ -32,6 +36,7 @@ export default function Auth(props) {
       .post(apiUrl, values)
       .then((response) => {
         console.log(response);
+        saveToken(response);
         //save token
         //validform
         //useAuth custom hook
@@ -52,6 +57,7 @@ export default function Auth(props) {
   return (
     //link to register in nav/ below header
     <div className="tornado">
+    {token.length > 0? 
       <main>
         <form class="row g-3" onSubmit={handleSubmit}>
           <div class="col d-block justify-self-center align-items-center text-center">
@@ -118,6 +124,9 @@ export default function Auth(props) {
           </div>
         </form>
       </main>
+      :
+<Redirect to="/home"/>
+    }
     </div>
   );
 }

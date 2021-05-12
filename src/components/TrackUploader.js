@@ -7,7 +7,7 @@ export default function TrackUploader(props) {
     const trackUploader = (values) => {
         console.log(values);
         const apiUrl =
-          "https://loudfog-yomannino549969.codeanyapp.com/api/blob/trackUploader";
+          "https://loudfog-yomannino549969.codeanyapp.com/api/";
         axios
           .post(apiUrl, values)
           .then((response) => {
