@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 // import Auth from 'Auth.js';
 import axios from "axios";
+import { useHistory, Redirect } from "react-router-dom";
 import registrationValidation from "../utilities/RegisterValidation";
 import useForm from "../utilities/useForm";
 import { useAuth } from "../utilities/AuthContext";
 export default function Register(props) {
-  const { saveToken } = useAuth();
+  const history = useHistory();
+  const { saveToken, token } = useAuth();
   const register = (values) => {
     console.log(values);
     const apiUrl =
@@ -15,6 +17,8 @@ export default function Register(props) {
       .then((response) => {
         console.log(response);
         saveToken(response);
+
+        history.push("/home");
         //saveToken
         //validform
         //useAuth custom hook
@@ -49,6 +53,7 @@ export default function Register(props) {
   return (
     //link to login.js in nav /below heade
     <div className="polaroidPicture">
+    {!token.length > 0? 
       <main>
         <div>
           <form className="row g-3" onSubmit={handleSubmit}>
@@ -154,9 +159,9 @@ export default function Register(props) {
                   <div className="form-check justify-self-center text-center align-items-center">
                     <input
                       name="terms"
-                      className={`${
-                        values.terms && "is-valid"
-                      } ${!!errors.terms && "is-invalid"}`}
+                      className={`${values.terms && "is-valid"} ${
+                        !!errors.terms && "is-invalid"
+                      }`}
                       type="checkbox"
                       value={values.terms || ""}
                       id="invalidCheck3"
@@ -326,12 +331,15 @@ export default function Register(props) {
                 className="btn btn-primary justify-self-center text-center align-items-center font-weight-bolder"
                 type="submit"
               >
-              Sign Up
+                Sign Up
               </button>
             </div>
           </form>
         </div>
       </main>
+      :
+<Redirect to="/home"/>
+    }
     </div>
   );
 }

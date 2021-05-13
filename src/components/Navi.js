@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import TrackPlayer from "./TrackPlayer"
+import { useAuth } from "../utilities/AuthContext";
 export default function Navi(props) {
+  const {token} = useAuth();
   return (
 
       <div className="yungmoney" style={{
@@ -17,12 +19,29 @@ export default function Navi(props) {
           </div>
         </a>
         <span className="justify-self-center text-center align-items-center">
+        {token.length > 0 ?
+        <div class="nav-body">
+        <div>
+        <Link to="/logout" className="mx-3 btn-outline-light">
+          Logout
+         </Link>
+         </div>
+         <div>
+          <Link to="/upload" className="mx-3 btn-outline-light">
+          Upload
+          </Link>
+         </div>
+         </div>
+        :
+        <div>
           <Link to="/auth" className="mx-3 btn-outline-light">
             Login
           </Link>
           <Link to="/register" className="mx-3 btn-outline-light">
             Sign Up
           </Link>
+          </div>
+          }
         </span>
       </div>
     </nav>

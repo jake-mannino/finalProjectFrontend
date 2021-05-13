@@ -129,6 +129,97 @@ export default function TrackPlayer(props) {
           onChange={onVolumeChange}
           defaultValue={volume}
         />
+        <div className="col">
+        <div>
+        <label htmlFor="user-x" className="mx-3 btn-outline-light">Listener Postion X-Horizontal</label>
+        </div>
+        <input
+          type="range"
+          id="user-x"
+          name="user-x"
+        //not functional with resonance yet, listener position x axis
+          min="0.01"
+          max="1"
+          step=".025"
+          onChange={onVolumeChange}
+          defaultValue={volume}
+        />
+        <div>
+        <label htmlFor="user-y" className="mx-3 btn-outline-light">Listener Position Y-Vertical</label>
+        </div>
+        <input
+          type="range"
+          id="user-y"
+          name="user-y"
+       //not functional with resonance yet, listener position y axis
+          min="0.01"
+          max="1"
+          step=".025"
+          onChange={onVolumeChange}
+          defaultValue={volume}
+        />
+        <div>
+        <label htmlFor="user-z" className="mx-3 btn-outline-light">Listener Position Z-Depth</label>
+        </div>
+              <input
+          type="range"
+          id="user-z"
+          name="user-z"
+ //not functional with resonance yet, listener position z axis
+          min="0.01"
+          max="1"
+          step=".025"
+          onChange={onVolumeChange}
+          defaultValue={volume}
+        />
+        </div>
+        <div className="col">
+        <span>
+              <div>
+        <label htmlFor="soundObjA-x" className="mx-3 btn-outline-light">Sound ObjectA X-Horizontal</label>
+        </div>
+        <input
+          type="range"
+          id="soundObjA-x"
+          name="soundObjA-x"
+        //not functional with resonance yet, listener position x axis
+          min="0.01"
+          max="1"
+          step=".025"
+          onChange={onVolumeChange}
+          defaultValue={volume}
+        />
+        <div>
+        <label htmlFor="soundObjA-y" className="mx-3 btn-outline-light">Sound ObjectA Y-Vertical</label>
+        </div>
+        <input
+          type="range"
+          id="soundObjA-y"
+          name="soundObjA-y"
+       //not functional with resonance yet, listener position y axis
+          min="0.01"
+          max="1"
+          step=".025"
+          onChange={onVolumeChange}
+          defaultValue={volume}
+        />
+        
+        <div>
+        <label htmlFor="soundObjA-z" className="mx-3 btn-outline-light">Sound ObjectA Z-Depth</label>
+        </div>
+              <input
+          type="range"
+          id="soundObjA-z"
+          name="soundObjA-z"
+ //not functional with resonance yet, listener position z axis
+          min="0.01"
+          max="1"
+          step=".025"
+          onChange={onVolumeChange}
+          defaultValue={volume}
+        />
+        </span>
+        </div>
         {/* <input
           type="range"
           id="x0"
@@ -141,15 +232,9 @@ export default function TrackPlayer(props) {
           onChange={onX0change}
           defaultValue={onX0init}
         /> */}
-        <div>
-        <label htmlFor="user-x">Listener Horizontal</label>
-        </div>
-        <div>
-        <label htmlFor="user-y">Listener Vertical</label>
-        </div>
-        <div>
-        <label htmlFor="user-z">Listener Z-Depth</label>
-        </div>
+        
+        
+        
       </div>
     </div>
   );

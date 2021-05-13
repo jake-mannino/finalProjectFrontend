@@ -5,12 +5,12 @@ import "../App.scss";
 import registrationValidation from "../utilities/RegisterValidation";
 import useForm from "../utilities/useForm";
 import { useAuth } from "../utilities/AuthContext";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 export default function Auth(props) {
     const { saveToken, token } = useAuth();
-
-  const auth = (values) => {
+    const history = useHistory();
+    const auth = (values) => {
     // const handleChange = (e) => {
     //   setFormData((previousState) => {
     //     const value =
@@ -37,6 +37,7 @@ export default function Auth(props) {
       .then((response) => {
         console.log(response);
         saveToken(response);
+        history.push("/home");
         //save token
         //validform
         //useAuth custom hook
@@ -57,7 +58,7 @@ export default function Auth(props) {
   return (
     //link to register in nav/ below header
     <div className="tornado">
-    {token.length > 0? 
+    {!token.length > 0? 
       <main>
         <form class="row g-3" onSubmit={handleSubmit}>
           <div class="col d-block justify-self-center align-items-center text-center">

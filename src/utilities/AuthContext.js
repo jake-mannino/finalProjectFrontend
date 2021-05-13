@@ -41,6 +41,10 @@ import { axiosHelper } from "./axiosHelper";
             axiosHelper({method: 'get', url: 'api/logout'})
  
          }
+        function navi(){
+            axiosHelper({method:'post', url: 'oauth/token'})
+        }
+        console.log(token);
         //sign up (auth)
         //log in
         //getting user info (token or userdata)
@@ -48,7 +52,7 @@ import { axiosHelper } from "./axiosHelper";
         //account manager
             //change password
             //block / unblock
-        return { token, register, login, logout, saveToken }
+        return { token, register, login, logout, saveToken, navi }
 
 
    } 

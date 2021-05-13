@@ -15,6 +15,7 @@ import backgroundH from "../src/RaptorJakeOnTheProwl.gif";
 import { AuthProvider } from "./utilities/AuthContext";
 import TrackPlayer from "./components/TrackPlayer";
 import Home from "./components/Home";
+import TrackUploader from "./components/TrackUploader";
 // var Link = React.createClass({
 //   getInitialState: function(){
 //     return {hover: false}
@@ -110,6 +111,9 @@ function App() {
             </Route>
             <Route exact path="/home">
               <Home />
+            </Route>
+            <Route>
+              <TrackUploader path="/upload"/>
             </Route>
             {/* <Route exact={true} path="a">
             <Register saveToken={saveToken} />
