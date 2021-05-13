@@ -129,6 +129,7 @@ export default function TrackPlayer(props) {
           onChange={onVolumeChange}
           defaultValue={volume}
         />
+        <div className="row">
         <div className="col">
         <div>
         <label htmlFor="user-x" className="mx-3 btn-outline-light">Listener Postion X-Horizontal</label>
@@ -236,6 +237,7 @@ export default function TrackPlayer(props) {
         
         
       </div>
+    </div>
     </div>
   );
 }
