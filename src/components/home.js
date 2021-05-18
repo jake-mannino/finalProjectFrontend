@@ -10,7 +10,7 @@ export default function Home() {
   const { token } = useAuth();
   return (
     <div>
-      {!token.length > 0 ? (
+      {token.length > 0 ? (
         <div>
           you are authenticated
           <div>
