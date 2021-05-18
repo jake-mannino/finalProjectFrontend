@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import TrackValidation from "../utilities/TrackValidation";
 import useForm from "../utilities/useForm";
+import { useAuth } from "../utilities/AuthContext";
+import { Redirect, useHistory } from "react-router-dom";
+
+
 
 export default function TrackUploader(props) {
+  const {token} = useAuth();
   const trackUploader = (values) => {
     console.log(values);
     const apiUrl = "https://loudfog-yomannino549969.codeanyapp.com/api/";
@@ -29,12 +34,6 @@ export default function TrackUploader(props) {
   return (
     <div>
       <div>
-        <input
-          name="track-title"
-          className="justify-self-center align-items-center text-center"
-        ></input>
-      </div>
-      <div>
         <div className="mb-3 justify-self-center align-items-center text-center font-weight-bolder">
           <div className="upload-title">
             <h2>Upload Track</h2>
@@ -58,8 +57,27 @@ export default function TrackUploader(props) {
         </div>
         <button className="Upload Button">Upload</button>
       </div>
+      <div className="mb-3 d-block justify-self-center align-items-center text-white text-center font-weight-bolder">
+      Track Title
+        <input
+          name="track-title"
+          className="justify-self-center align-items-center text-center"
+        ></input>
+      </div>
+      <div>
+      <div className="mb-3 d-block justify-self-center align-items-center text-center text-white font-weight-bolder"> Artist
+        <input
+          name="artist"
+          className="justify-self-center align-items-center text-center"
+        ></input>
+      </div>
+      </div>
     </div>
   );
+  {!token.length > 0 ? 
+    <Redirect to="/auth"></Redirect> :
+    <Redirect to="/home"></Redirect>
+  }
 }
 
 // function TestComp() {
